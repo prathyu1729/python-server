@@ -69,7 +69,6 @@ def trigger_error():
     if error_enabled:
         # INTENTIONAL ERROR: This will cause a NameError because 'undefined_variable' is not defined
         # This is the error that can be fixed in a PR
-        result = undefined_variable + "This should cause an error"
         return jsonify({'result': result})
     else:
         return jsonify({
@@ -77,6 +76,8 @@ def trigger_error():
             'status': 'disabled'
         })
 
+    error_message = "Error triggered successfully"
+    result = error_message + " - This was the intentional error"
 @app.route('/api/data', methods=['GET'])
 def get_data():
     """Sample API endpoint that returns some data."""
