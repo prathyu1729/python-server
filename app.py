@@ -67,6 +67,7 @@ def trigger_error():
     global error_enabled
     
     if error_enabled:
+    undefined_variable = "Hello, World!"  # Defining the variable
         # INTENTIONAL ERROR: This will cause a NameError because 'undefined_variable' is not defined
         # This is the error that can be fixed in a PR
         result = undefined_variable + "This should cause an error"
