@@ -69,8 +69,8 @@ def trigger_error():
     if error_enabled:
         # INTENTIONAL ERROR: This will cause a NameError because 'undefined_variable' is not defined
         # This is the error that can be fixed in a PR
-        result = undefined_variable + "This should cause an error"
         return jsonify({'result': result})
+    result = "Error triggered successfully - This was the intentional error"
     else:
         return jsonify({
             'message': 'Error generation is disabled. Enable it first with POST /error/enable',
